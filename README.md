@@ -135,7 +135,7 @@ sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.
 sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}17\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}80\"%; s%^address = \"localhost:9090\"%address = \"localhost:${CUSTOM_PORT}90\"%; s%^address = \"localhost:9091\"%address = \"localhost:${CUSTOM_PORT}91\"%" $HOME/.warden/config/app.toml
 ```
 ```
-sed -i -e "s|^node *=.*|node = \"tcp://localhost:${CUSTOM_PORT}657\"|" $HOME/.warden/config/client.toml
+sed -i -e "s|^node *=.*|node = \"tcp://localhost:${CUSTOM_PORT}57\"|" $HOME/.warden/config/client.toml
 ```
 ### 🚧 Başlatalım
 ```
