@@ -179,7 +179,7 @@ Not: ctrl xy enter kaydet çık.
 wardend tx staking create-validator /root/validator.json \
     --from=cüzdan-adi \
     --chain-id=chiado_10010-1 \
-    --fees=500uward \
+    --gas auto --gas-adjustment 1.6 --fees 250000000000000award \
     --node=http://localhost:11957
 ```
 ### oto validator olusturma yukardaki ile yapamadıysız deneyin
@@ -206,7 +206,7 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(warde
 wardend tx staking create-validator validator.json \
     --from cuzdanismin \
     --chain-id chiado_10010-1 \
-    --gas auto --gas-adjustment 1.5 --fees 600uward \
+    --gas auto --gas-adjustment 1.6 --fees 250000000000000award \
     --node=http://localhost:11957
 ```
 
@@ -216,7 +216,7 @@ wardend tx staking create-validator validator.json \
 wardend tx staking delegate valoper-adresi miktar000000000000000000award \
 --chain-id chiado_10010-1 \
 --from "cüzdan-adi" \
---fees 500uward \
+--gas auto --gas-adjustment 1.6 --fees 250000000000000award \
 --node=http://localhost:11957
 ```
 
