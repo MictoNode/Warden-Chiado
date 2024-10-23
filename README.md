@@ -149,6 +149,7 @@ journalctl -fu wardend -o cat
 wardend keys add cüzdan-adi
 ```
 ### 🚧 Validator Olusturma
+NOT: Faucet adresi : https://faucet.chiado.wardenprotocol.org/
 Not: altaki kodla pubkey öğren
 ```
 wardend comet show-validator
