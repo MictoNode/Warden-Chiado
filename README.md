@@ -189,7 +189,7 @@ cd $HOME
 ```
 # Create validator.json file
 ```
-echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(wardend comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
+echo ""{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(wardend comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
     \"amount\": \"1000000000000000000award\",
     \"moniker\": \"nodeismin\",
     \"identity\": \"keybasecode\",
