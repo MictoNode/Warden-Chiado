@@ -32,7 +32,7 @@ sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -
 ### 🚧 Go kurulumu
 ```
 cd $HOME
-VER="1.21.3"
+VER="1.23.0"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
@@ -63,7 +63,7 @@ sudo ln -s $HOME/.warden/cosmovisor/genesis $HOME/.warden/cosmovisor/current -f
 sudo ln -s $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend -f
 ```
 ```
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.6.0
 ```
 ### 🚧 Servis oluşturalım
 ```
@@ -115,7 +115,7 @@ sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
 ```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.warden/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.warden/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.warden/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.warden/config/app.toml
 ```
 ### 🚧 Snap
 ```
@@ -162,6 +162,10 @@ journalctl -fu wardend -o cat
 ### 🚧 Cüzdan olusturalım
 ```
 wardend keys add cüzdan-adi
+```
+### 🚧 Cüzdan import
+```
+wardend keys add cüzdan-adi --recover
 ```
 ### 🚧 Validator Olusturma
 NOT: Faucet adresi : https://faucet.chiado.wardenprotocol.org/
