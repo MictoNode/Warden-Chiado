@@ -150,7 +150,7 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${WARDEN_PO
 s%:26660%:${WARDEN_PORT}660%g" $HOME/.warden/config/config.toml
 ```
 ```
-sed -i -e "s|^node *=.*|node = \"tcp://localhost:${CUSTOM_PORT}57\"|" $HOME/.warden/config/client.toml
+sed -i -e "s|^node *=.*|node = \"tcp://localhost:${WARDEN_PORT}57\"|" $HOME/.warden/config/client.toml
 ```
 ### 🚧 Başlatalım
 ```
