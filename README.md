@@ -129,10 +129,25 @@ fi
 
 ### 🚧 Port ayarı
 ```
-CUSTOM_PORT=119
-
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:${CUSTOM_PORT}58\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:${CUSTOM_PORT}57\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:${CUSTOM_PORT}60\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:${CUSTOM_PORT}56\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${CUSTOM_PORT}66\"%" $HOME/.warden/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTOM_PORT}17\"%; s%^address = \":8080\"%address = \":${CUSTOM_PORT}80\"%; s%^address = \"localhost:9090\"%address = \"localhost:${CUSTOM_PORT}90\"%; s%^address = \"localhost:9091\"%address = \"localhost:${CUSTOM_PORT}91\"%" $HOME/.warden/config/app.toml
+echo "export WARDEN_PORT="19"" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+```
+sed -i.bak -e "s%:1317%:${WARDEN_PORT}317%g;
+s%:8080%:${WARDEN_PORT}080%g;
+s%:9090%:${WARDEN_PORT}090%g;
+s%:9091%:${WARDEN_PORT}091%g;
+s%:8545%:${WARDEN_PORT}545%g;
+s%:8546%:${WARDEN_PORT}546%g;
+s%:6065%:${WARDEN_PORT}065%g" $HOME/.warden/config/app.toml
+```
+```
+sed -i.bak -e "s%:26658%:${WARDEN_PORT}658%g;
+s%:26657%:${WARDEN_PORT}657%g;
+s%:6060%:${WARDEN_PORT}060%g;
+s%:26656%:${WARDEN_PORT}656%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${WARDEN_PORT}656\"%;
+s%:26660%:${WARDEN_PORT}660%g" $HOME/.warden/config/config.toml
 ```
 ```
 sed -i -e "s|^node *=.*|node = \"tcp://localhost:${CUSTOM_PORT}57\"|" $HOME/.warden/config/client.toml
