@@ -1,4 +1,4 @@
-<h1 align="center"> Warden Protocol Chiado Node ve Slinky otomatik kurulum.  </h1>
+<h1 align="center"> Warden Protocol Chiado Node ve Slinky Otomatik Kurulum  </h1>
 
 
 ![image](https://github.com/molla202/Warden-Protocol/assets/91562185/32f62d0a-d2b1-4dfa-9b6a-60395461025f)
