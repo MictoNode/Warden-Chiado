@@ -1,4 +1,4 @@
-<h1 align="center"> Warden Protocol </h1>
+<h1 align="center"> Warden Protocol Chiado Node ve Slinky otomatik kurulum.  </h1>
 
 
 ![image](https://github.com/molla202/Warden-Protocol/assets/91562185/32f62d0a-d2b1-4dfa-9b6a-60395461025f)
@@ -23,7 +23,7 @@
 | RAM	| 16+ GB |
 | Storage	| 400 GB SSD |
 
-### 🚧 Warden Protocol Chiado ve Slinky otomatik kurulum. Alttaki kodu yapıştırıp önce 1. sonra ise 2. adımı yükleyelim. Port ve moniker adını sizin yazdığınız şekilde otomatik olarak ayarlar. Sync olduktan sonra ise alttaki cüzdan işlemlerine devam ediyoruz.
+### 🚧 Alttaki kodu yapıştırıp önce 1. sonra ise 2. adımı yükleyelim. Port ve moniker adını sizin yazdığınız şekilde otomatik olarak ayarlar. Sync olduktan sonra ise alttaki cüzdan işlemlerine devam ediyoruz.
 ```
 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/warden-chiado/refs/heads/main/wardenmenu.sh)
 ```
