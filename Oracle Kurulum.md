@@ -8,7 +8,7 @@ git checkout v1.0.12
 make build
 mv build/slinky /usr/local/bin/
 ```
-## Servis oluşturalım
+### Servis oluşturalım
 ```
 export WARDEN_PORT="19"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
@@ -30,13 +30,13 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-## Başlatalım
+### Başlatalım
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable slinkyd
 sudo systemctl start slinkyd
 ```
-## Warden Oracle Ayarları
+### Warden Oracle Ayarları
 ```
 nano /root/.warden/config/app.toml
 ```
@@ -69,15 +69,26 @@ metrics_enabled = "true"
 ```
 sudo systemctl daemon-reload && sudo systemctl restart wardend && sudo systemctl restart slinkyd
 ```
-## warden loglarını kontrol edelim
+### warden loglarını kontrol edelim
 ```
 sudo journalctl -u wardend -f -o cat
 ```
-## oracle loglarını kontrol edelim
+### oracle loglarını kontrol edelim
 ```
 journalctl -fu slinkyd --no-hostname
 ```
-## Price çıktısı gelmesi lazım
+### Price çıktısı gelmesi lazım
 ```
 curl localhost:19080/slinky/oracle/v1/prices | jq
+```
+### Tamamen silme
+```
+cd $HOME
+sudo systemctl stop slinkyd
+sudo systemctl disable slinkyd
+sudo rm -rf /etc/systemd/system/slinkyd.service
+sudo systemctl daemon-reload
+sudo rm -f /usr/local/bin/slinkyd
+sudo rm -f $(which slinky)
+sudo rm -rf $HOME/.slinky $HOME/slinky
 ```
