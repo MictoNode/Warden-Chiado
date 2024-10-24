@@ -102,7 +102,7 @@ wget -O $HOME/.warden/config/addrbook.json "https://raw.githubusercontent.com/Co
 ```
 ### 🚧 Gas ayarı
 ```
-sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"250000000000000award\"/;" ~/.warden/config/app.toml
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "25000000award"|g' $HOME/.warden/config/app.toml
 ```
 ### 🚧 Peer
 ```
